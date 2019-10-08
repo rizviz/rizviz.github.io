@@ -42,14 +42,18 @@
 	                                <div data-conv-fork="skintype">
 	                                    <div data-conv-case="dry">
 	                                        <input type="text" data-conv-question="When you have dry skin, a wrong base can settle & latch onto skin flakes. We'll make sure to include hydrating formula options in our recommendations" data-no-answer="true">
+
 	                                        <select name="coveragetype" data-callback="storeState" data-conv-question="Ok with dry skin, what kind of coverage you want? ">
 	                                   		<option value="light">Light</option>
 		                                    <option value="medium">Medium</option>
 	                                        <option value="heavy">Heavy</option>
 		                                	</select>
 		                                		<select data-conv-question="Our recommendations,  try one of these:">
-													<option value="dior-dry" data-callback="dior-dry">Dior</option>
-													<option value="fenty-dry" data-callback="fenty-dry">FentyBeauty</option>
+													
+													<option value="fenty-dry" data-callback="fenty-dry"> FentyBeauty </option>
+													<option value="dor-dry" data-callback="dor-dry"> Dior </option>
+
+
 												</select>
 
 	                                    </div>
@@ -87,7 +91,7 @@
 	<script type="text/javascript" src="dist/jquery.convform.js"></script>
 
 	<script>
-		function dior-dry(stateWrapper, ready) {
+		function dor-dry(stateWrapper, ready) {
 			window.open("https://https://www.sephora.com/product/forever-matte-foundation-P439940");
 			ready();
 		}
