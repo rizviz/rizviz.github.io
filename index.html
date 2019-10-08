@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>convForm - example</title>
+	<title>Foundation Finder</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,12 +18,14 @@
 	                    <div class="card no-border">
 	                        <div id="chat" class="conv-form-wrapper">
 	                            <form action="" method="GET" class="hidden">
-	                                <select data-conv-question="Hey Hey Hey .. You ready to find your perfect makeup ?" name="first-question">
+	                                <select data-conv-question="Hey Beautiful .. You ready to find your perfect makeup ?" name="first-question">
 	                                    <option value="yes">Yes</option>
 	                                    <option value="sure">Sure!</option>
 	                                </select>
-	                                <input type="text" name="name" data-conv-question="Alrighty then! First, tell me your full name, please.|Okay! What do your friends call you ?.">
+	                                <div name="question1"> <img src="irsols_logo_4.png" alt="logo"/> <input type="text" name="name" data-conv-question="Alrighty then! First, tell me your full name, please.|Okay! What do your friends call you ?.">
+	                                </div>
 	                                <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you." data-no-answer="true">
+	                                <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="And what's your e-mail?">
 	                                <!-- <input type="text" data-conv-question="This plugin supports multi-select too. Let's see an example." data-no-answer="true"> -->
 	                                <!--<select name="multi[]" data-conv-question="What's your skin type ?" multiple>
 	                                    <option value="Dry">Dry</option>
@@ -31,13 +33,13 @@
 	                                    <option value="Combo">Combo</option>
 	                                    <option value="Balanced">Balanced</option>
                                     </select> -->
-	                                <select name="programmer" data-callback="storeState" data-conv-question="So let's do this .. What's your skin type? ">
+	                                <select name="skintype" data-callback="storeState" data-conv-question="So let's do this .. What's your skin type? ">
 	                                    <option value="oily">Oily</option>
 	                                    <option value="dry">Dry</option>
                                         <option value="combo">Combo</option>
                                         <option value="balanced">Balanced</option>
 	                                </select>
-	                                <div data-conv-fork="programmer">
+	                                <div data-conv-fork="skintype">
 	                                    <div data-conv-case="dry">
 	                                        <input type="text" data-conv-question="Well a dry skin ain't no fun. But hang tight we'll be able to fix that ..Just answer a few more questions and we'll give you recommendations for your skin type" data-no-answer="true">
 	                                    </div>
@@ -50,16 +52,10 @@
                                          <div data-conv-case="balanced">
                                              <input type="text" data-conv-question="That's awesome ..Just answer a few  more questions and we'll give you recommendations for your skin type .." data-no-answer="true">
                                          </div>
-	                                    <div data-conv-case="oily">
-		                                    <select name="thought" data-conv-question="Oily skin is can be challenging but good news is that you're not alone ">
-		                                    	<option value="yes">Yes</option>
-		                                    	<option value="no">No..</option>
-		                                    </select>
-	                                    </div>
+
 	                                </div>
-	                                <input type="text" data-conv-question="convForm also supports regex patterns. Look:" data-no-answer="true">
-	                                <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
-	                                <input data-conv-question="Now tell me a secret (like a password)" type="password" data-minlength="6" id="senha" name="password" required placeholder="password">
+	                                
+	                               
 									<select data-conv-question="Selects also support callback functions. For example, try one of these:">
 											<option value="google" data-callback="google">Google</option>
 											<option value="bing" data-callback="bing">Bing</option>
