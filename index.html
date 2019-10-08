@@ -41,7 +41,17 @@
 	                                </select>
 	                                <div data-conv-fork="skintype">
 	                                    <div data-conv-case="dry">
-	                                        <input type="text" data-conv-question="Well a dry skin ain't no fun. But hang tight we'll be able to fix that ..Just answer a few more questions and we'll give you recommendations for your skin type" data-no-answer="true">
+	                                        <input type="text" data-conv-question="When you have dry skin, a wrong base can settle & latch onto skin flakes. We'll make sure to include hydrating formula options in our recommendations" data-no-answer="true">
+	                                        <select name="coveragetype" data-callback="storeState" data-conv-question="Ok with dry skin, what kind of coverage you want? ">
+	                                   		<option value="light">Light</option>
+		                                    <option value="medium">Medium</option>
+	                                        <option value="heavy">Heavy</option>
+		                                	</select>
+		                                		<select data-conv-question="Our recommendations,  try one of these:">
+													<option value="dior-dry" data-callback="dior-dry">Dior</option>
+													<option value="fenty-dry" data-callback="fenty-dry">FentyBeauty</option>
+												</select>
+
 	                                    </div>
                                         <div data-conv-case="oily">
                                              <input type="text" data-conv-question="It's natural to have oily skin , good news is that you're not alone ....Just answer a few more questions and we'll give you recommendations for your skin type "data-no-answer="true">
@@ -56,11 +66,8 @@
 	                                </div>
 	                                
 	                               
-									<select data-conv-question="Selects also support callback functions. For example, try one of these:">
-											<option value="google" data-callback="google">Google</option>
-											<option value="bing" data-callback="bing">Bing</option>
-									</select>
-	                                <select name="callbackTest" data-conv-question="You can do some cool things with callback functions. Want to rollback to the 'programmer' question before?">
+								
+	                                <select name="callbackTest" data-conv-question="Still unsure , want to try suggestions with a different skin type ?">
 	                                    <option value="yes" data-callback="rollback">Yes</option>
 	                                    <option value="no" data-callback="restore">No</option>
 	                                </select>
@@ -80,12 +87,12 @@
 	<script type="text/javascript" src="dist/jquery.convform.js"></script>
 
 	<script>
-		function google(stateWrapper, ready) {
-			window.open("https://google.com");
+		function dior-dry(stateWrapper, ready) {
+			window.open("https://https://www.sephora.com/product/forever-matte-foundation-P439940");
 			ready();
 		}
-		function bing(stateWrapper, ready) {
-			window.open("https://bing.com");
+		function fenty-dry(stateWrapper, ready) {
+			window.open("https://www.sephora.com/product/pro-filtr-soft-matte-longwear-foundation-P87985432");
 			ready();
 		}
 		var rollbackTo = false;
