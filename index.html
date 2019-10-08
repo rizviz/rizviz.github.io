@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MakeupFinder</title>
+	<title>Your Beauty Advisor</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,12 +18,17 @@
 	                    <div class="card no-border">
 	                        <div id="chat" class="conv-form-wrapper">
 	                            <form action="" method="GET" class="hidden">
-	                                <select data-conv-question="Hey Girl .. Are you eady to find your perfect makeup ?" name="first-question">
+	                                <input type="text" data-conv-question=" Hey, Welcome to <b><i>Ask Zaara</i></b> , your A.I. driven personal makeup advisor" data-no-answer="true">
+	                               <!-- <select data-conv-question="Hey Girl .. Are you ready to find your perfect makeup ?" name="first-question">
 	                                    <option value="yes">Yes</option>
 	                                    <option value="sure">Sure!</option>
-	                                </select>
-	                                <input type="text" name="name" data-conv-question="Alrighty then! First, tell me your full name, please.|Okay! What do your friends call you ?.">
-	                                <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you." data-no-answer="true">
+	                                </select> -->
+	                                <input type="text" name="name" data-conv-question="Ready to find your perfect makeup ?
+	                                 First, tell me your full name, please .">
+	                                <input type="text" data-conv-question="Howdy, {name}:0! So nice to meet you." data-no-answer="true">
+	                                 <!--
+	                                 <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
+									-->
 	                                <!-- <input type="text" data-conv-question="This plugin supports multi-select too. Let's see an example." data-no-answer="true"> -->
 	                                <!--<select name="multi[]" data-conv-question="What's your skin type ?" multiple>
 	                                    <option value="Dry">Dry</option>
@@ -31,45 +36,108 @@
 	                                    <option value="Combo">Combo</option>
 	                                    <option value="Balanced">Balanced</option>
                                     </select> -->
-	                                <select name="programmer" data-callback="storeState" data-conv-question="So let's do this .. What's your skin type? ">
+	                                <select name="skintype" data-callback="storeState" data-conv-question="Alright.. What's your skin type? ">
 	                                    <option value="oily">Oily</option>
 	                                    <option value="dry">Dry</option>
                                         <option value="combo">Combo</option>
                                         <option value="balanced">Balanced</option>
 	                                </select>
-	                                <div data-conv-fork="programmer">
+	                                <div data-conv-fork="skintype">
 	                                    <div data-conv-case="dry">
 	                                        <input type="text" data-conv-question="When you've dry skin, a wrong base can settle & latch onto skin flakes. That’s where hydrating formulas come in." data-no-answer="true">
+	                                         <select name="dry-coverage" data-conv-question="What kind of coverage you're looking for?">
+		                                    	<option value="buildable">Buildable</option>
+		                                    	<option value="medium">Medium</option>
+		                                    	<option value="full">Full</option>
+		                                    </select>
+		                                    <div data-conv-fork="dry-coverage">
+	                                    		<div data-conv-case="buildable">
+	                                        		<input type="text" data-conv-question="recommendations: buildable" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="medium">
+	                                        		<input type="text" data-conv-question="recommendations: medium" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="full">
+	                                        		<input type="text" data-conv-question="recommendations: full" data-no-answer="true">
+	                                    		</div>
+	                                    	</div>
 	                                    </div>
-                                        <div data-conv-case="oily">
+                                       <!-- <div data-conv-case="oily">
                                              <input type="text" data-conv-question="It's natural to have oily skin , good news is that you're not alone ....Just answer a few more questions and we'll give you recommendations for your skin type "data-no-answer="true">
-                                         </div>
+                                         </div> -->
                                          <div data-conv-case="combo">
-                                             <input type="text" data-conv-question="Well Combination Oily/Dry can be a bit challenging. But hang tight we'll be able to fix that .." data-no-answer="true">
+                                             <input type="text" data-conv-question="Combination Oily/Dry can be a bit tricky. But hang tight we'll be able to fix that .." data-no-answer="true">
+                                              <select name="combo-coverage" data-conv-question="What kind of coverage you're looking for?">
+		                                    	<option value="buildable">Buildable</option>
+		                                    	<option value="medium">Medium</option>
+		                                    	<option value="full">Full</option>
+		                                    </select>
+		                                    <div data-conv-fork="combo-coverage">
+	                                    		<div data-conv-case="buildable">
+	                                        		<input type="text" data-conv-question="recommendations: buildable" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="medium">
+	                                        		<input type="text" data-conv-question="recommendations: medium" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="full">
+	                                        		<input type="text" data-conv-question="recommendations: full" data-no-answer="true">
+	                                    		</div>
+	                                    	</div>
                                          </div>
                                          <div data-conv-case="balanced">
                                              <input type="text" data-conv-question="That's awesome ..Just answer a few  more questions and we'll give you recommendations for your skin type .." data-no-answer="true">
-                                         </div>
-	                                    <!--<div data-conv-case="oily">
-		                                    <select name="thought" data-conv-question="Oily skin is can be challenging but good news is that you're not alone ">
-		                                    	<option value="yes">Yes</option>
-		                                    	<option value="no">No..</option>
+                                              <select name="balanced-coverage" data-conv-question="What kind of coverage you're looking for?">
+		                                    	<option value="buildable">Buildable</option>
+		                                    	<option value="medium">Medium</option>
+		                                    	<option value="full">Full</option>
 		                                    </select>
-                                        </div>-->
+		                                    <div data-conv-fork="balanced-coverage">
+	                                    		<div data-conv-case="buildable">
+	                                        		<input type="text" data-conv-question="recommendations: buildable" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="medium">
+	                                        		<input type="text" data-conv-question="recommendations: medium" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="full">
+	                                        		<input type="text" data-conv-question="recommendations: full" data-no-answer="true">
+	                                    		</div>
+	                                    	</div>
+                                         </div>
+	                                    <div data-conv-case="oily">
+	                                    	<input type="text" data-conv-question="It's natural to have oily skin , good news is that you're not alone ....Just answer a few more questions and we'll give you right recommendations for your skin type "data-no-answer="true">
+		                                    <select name="oily-coverage" data-conv-question="What kind of coverage you're looking for?">
+		                                    	<option value="buildable">Buildable</option>
+		                                    	<option value="medium">Medium</option>
+		                                    	<option value="full">Full</option>
+		                                    </select>
+		                                    <div data-conv-fork="oily-coverage">
+	                                    		<div data-conv-case="buildable">
+	                                        		<input type="text" data-conv-question="recommendations: buildable" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="medium">
+	                                        		<input type="text" data-conv-question="recommendations: medium" data-no-answer="true">
+	                                    		</div>
+	                                    		<div data-conv-case="full">
+	                                        		<input type="text" data-conv-question="Following full coverage foundations will not be messy and heavy feeling. Not only they cover your skin lightly but also care through some imperfections vigorously." data-no-answer="true">
+	                                    		</div>
+	                                    	</div>
+                                        </div>
 	                                </div>
-	                                <input type="text" data-conv-question="convForm also supports regex patterns. Look:" data-no-answer="true">
-	                                <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
-									
-                                    <!--<select data-conv-question="Selects also support callback functions. For example, try one of these:">
-											<option value="google" data-callback="google">Google</option>
-											<option value="bing" data-callback="bing">Bing</option>
-                                    </select> -->
-	                                <select name="callbackTest" data-conv-question=" 'programmer' question before?">
+
+	                                <!--<input type="text" data-conv-question="convForm also supports regex patterns. Look:" data-no-answer="true"> -->
+	                               
+                                    
+	                                <select name="callbackTest" data-conv-question="Want different recommendations ?">
 	                                    <option value="yes" data-callback="rollback">Yes</option>
 	                                    <option value="no" data-callback="restore">No</option>
 	                                </select>
+									<select data-conv-question="Help us spread the word :">
+											<option value="tweet" data-callback="tweet">Tweet This</option>
+											<option value="fblike" data-callback="fblike">Like on Facebook</option>
+                                    </select> 
+
 	                                <select data-conv-question="This is it! If you like me, consider donating! If you need support, contact me. When the form gets to the end, the plugin submits it normally, like you had filled it." id="">
-	                                    <option value="">Awesome!</option>
+	                                    <option value="recommendations.html">Awesome!</option>
 	                                </select>
 	                            </form>
 	                        </div>
@@ -84,12 +152,12 @@
 	<script type="text/javascript" src="dist/jquery.convform.js"></script>
 
 	<script>
-		function google(stateWrapper, ready) {
-			window.open("https://google.com");
+		function tweet(stateWrapper, ready) {
+			window.open("https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fwww.askzaara.com%2Fsearches%2F18497865&ref_src=twsrc%5Etfw&related=askzaara&text=I%20found%20my%20perfect%20foundation%20match%20on%20askzaara&tw_p=tweetbutton&url=http%3A%2F%2Faskzaara.com");
 			ready();
 		}
-		function bing(stateWrapper, ready) {
-			window.open("https://bing.com");
+		function fblike(stateWrapper, ready) {
+			window.open("recommendations.html");
 			ready();
 		}
 		var rollbackTo = false;
@@ -122,7 +190,7 @@
 	</script>
 	<script>
 		jQuery(function($){
-			convForm = $('#chat').convform({selectInputStyle: 'disable'});
+			convForm = $('#chat').convform({selectInputStyle: 'enable'});
 			console.log(convForm);
 		});
 	</script>
