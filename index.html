@@ -25,22 +25,33 @@
 	                                <input type="text" name="name" data-conv-question="Alrighty then! First, tell me your full name, please.|Okay! What do your friends call you ?.">
 	                                <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you." data-no-answer="true">
 	                                <!-- <input type="text" data-conv-question="This plugin supports multi-select too. Let's see an example." data-no-answer="true"> -->
-	                                <select name="multi[]" data-conv-question="What's your skin type ?" multiple>
-	                                    <option value="Dry: I'm an iguana">Dry</option>
-	                                    <option value="Oily: Tissue papers my friend">Oily</option>
-	                                    <option value="Combo: It's a mixed bag">Combo</option>
-	                                    <option value="Balanced: Oh thank haven">Balanced</option>
-	                                </select>
-	                                <select name="programmer" data-callback="storeState" data-conv-question="So, are you a programmer? (this question will fork the conversation based on your answer)">
-	                                    <option value="yes">Yes</option>
-	                                    <option value="no">No</option>
+	                                <!--<select name="multi[]" data-conv-question="What's your skin type ?" multiple>
+	                                    <option value="Dry">Dry</option>
+	                                    <option value="Oily">Oily</option>
+	                                    <option value="Combo">Combo</option>
+	                                    <option value="Balanced">Balanced</option>
+                                    </select> -->
+	                                <select name="programmer" data-callback="storeState" data-conv-question="So let's do this .. What's your skin type? ">
+	                                    <option value="oily">Oily</option>
+	                                    <option value="dry">Dry</option>
+                                        <option value="combo">Combo</option>
+                                        <option value="balanced">Balanced</option>
 	                                </select>
 	                                <div data-conv-fork="programmer">
-	                                    <div data-conv-case="yes">
-	                                        <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+	                                    <div data-conv-case="dry">
+	                                        <input type="text" data-conv-question="Well a dry skin ain't no fun. But hang tight we'll be able to fix that ..Just answer a few more questions and we'll give you recommendations for your skin type" data-no-answer="true">
 	                                    </div>
-	                                    <div data-conv-case="no">
-		                                    <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
+                                        <div data-conv-case="oily">
+                                             <input type="text" data-conv-question="It's natural to have oily skin , good news is that you're not alone ....Just answer a few more questions and we'll give you recommendations for your skin type "data-no-answer="true">
+                                         </div>
+                                         <div data-conv-case="combo">
+                                             <input type="text" data-conv-question="Well Combination Oily/Dry can be a bit challenging. But hang tight we'll be able to fix that .." data-no-answer="true">
+                                         </div>
+                                         <div data-conv-case="balanced">
+                                             <input type="text" data-conv-question="That's awesome ..Just answer a few  more questions and we'll give you recommendations for your skin type .." data-no-answer="true">
+                                         </div>
+	                                    <div data-conv-case="oily">
+		                                    <select name="thought" data-conv-question="Oily skin is can be challenging but good news is that you're not alone ">
 		                                    	<option value="yes">Yes</option>
 		                                    	<option value="no">No..</option>
 		                                    </select>
