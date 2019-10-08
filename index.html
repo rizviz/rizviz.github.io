@@ -50,20 +50,20 @@
                                          <div data-conv-case="balanced">
                                              <input type="text" data-conv-question="That's awesome ..Just answer a few  more questions and we'll give you recommendations for your skin type .." data-no-answer="true">
                                          </div>
-	                                    <div data-conv-case="oily">
+	                                    <!--<div data-conv-case="oily">
 		                                    <select name="thought" data-conv-question="Oily skin is can be challenging but good news is that you're not alone ">
 		                                    	<option value="yes">Yes</option>
 		                                    	<option value="no">No..</option>
 		                                    </select>
-	                                    </div>
+                                        </div>-->
 	                                </div>
 	                                <input type="text" data-conv-question="convForm also supports regex patterns. Look:" data-no-answer="true">
 	                                <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
-	                                <input data-conv-question="Now tell me a secret (like a password)" type="password" data-minlength="6" id="senha" name="password" required placeholder="password">
-									<select data-conv-question="Selects also support callback functions. For example, try one of these:">
+									
+                                    <!--<select data-conv-question="Selects also support callback functions. For example, try one of these:">
 											<option value="google" data-callback="google">Google</option>
 											<option value="bing" data-callback="bing">Bing</option>
-									</select>
+                                    </select> -->
 	                                <select name="callbackTest" data-conv-question="You can do some cool things with callback functions. Want to rollback to the 'programmer' question before?">
 	                                    <option value="yes" data-callback="rollback">Yes</option>
 	                                    <option value="no" data-callback="restore">No</option>
